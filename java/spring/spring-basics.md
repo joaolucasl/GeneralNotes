@@ -15,4 +15,12 @@ A way to give components their dependencies and to manage them in the life cycle
 
 - *Injection*: When the code defines its dependencies either in its constructor or in its getters and setters.
 
-
+#### Component Scan
+- *Spring Boot*: 
+    - If your other packages hierarchies are below your main app with the `@SpringBootApplication` annotation, you’re covered by implicit components scan.
+    - If there are beans/components in other packages which are not sub packages of the main package, you should manually add them as `@ComponentScan`:
+    ```
+    @ComponentScan("com.github.joaolucasl.foo")
+    @SpringBootApplication
+    public class SpringApplication {
+    ```
